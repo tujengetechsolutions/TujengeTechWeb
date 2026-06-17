@@ -1,3 +1,20 @@
 @import "tailwindcss";
 
+@layer base{
+    :root {
+        --color-background: #ffffff;
+        --color-foreground: #0b132b;
 
+        /* Call to action & Buttons*/
+        --color-brand-yellow: #eab308;
+        --color-brand-yellow-hover: #facc15;
+
+        /* Typography Accent colors*/
+        --color-brand-blue: #2563eb;
+        --color-brand-gold: #eab308;
+
+        --color-border: #f1f5f9; /* Grid line */
+        --color-muted-text: #4b5563; /* text description */
+
+    }
+}
