@@ -3,9 +3,9 @@
 @layer base{
     :root {
         --color-background: #ffffff;
-        --color-foreground: #0b132b;
+        --color-foreground: #0b132b; /*headings*/
 
-        /* Call to action & Buttons*/
+        /* Call to action & Button*/
         --color-brand-yellow: #eab308;
         --color-brand-yellow-hover: #facc15;
 
