@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-
 
 @theme {
   --color-background: #FFFFFF;
@@ -46,4 +44,5 @@
 
   --color-sidebar-border: #DDE6EE;
   --color-sidebar-ring: #0060DE;
+  --color-whatsapp-icon: #25D366
 }

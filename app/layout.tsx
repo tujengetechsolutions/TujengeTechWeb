@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import WhatsappIcon from "@/components/layout/WhatsappIcon";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,7 +14,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TujenegeTech",
+  title: {
+    default:'TujengeTech | Building Tomorrow Today',
+    template: '%s | TujenegeTech'
+  },
   description: "Tujenege tech solutions",
 };
 
@@ -23,7 +27,11 @@ export default function RootLayout({children,}:{children: React.ReactNode;}) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        
+        <WhatsappIcon />
+      </body>
     </html>
   );
 }
