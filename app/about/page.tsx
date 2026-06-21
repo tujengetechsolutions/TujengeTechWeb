@@ -62,7 +62,7 @@ export default function Page() {
             </h2>
           </div>
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="group rounded-2xl border border-border bg-card p-7 shadow-soft transition-all hover:-translate-y-1 hover:border-accent">
+            <div className="group rounded-2xl border border-border/20 bg-card p-7 shadow-soft transition-all hover:-translate-y-1 hover:border-accent">
               <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary transition group-hover:bg-accent
                group-hover:text-accent-foreground">
                 <Lightbulb width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}
@@ -71,7 +71,7 @@ export default function Page() {
               <h3 className="mt-5 font-display text-lg font-semibold">Innovation</h3>
               <p className="mt-2 text-sm text-muted-foreground">Building solutions for tomorrow, not just today.</p>
             </div>
-            <div className="group rounded-2xl border border-border bg-card p-7 shadow-soft transition-all hover:-translate-y-1 hover:border-accent">
+            <div className="group rounded-2xl border border-border/20 bg-card p-7 shadow-soft transition-all hover:-translate-y-1 hover:border-accent">
               <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary transition group-hover:bg-accent
                group-hover:text-accent-foreground">
                 <LucideTrophy width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}
@@ -80,7 +80,7 @@ export default function Page() {
               <h3 className="mt-5 font-display text-lg font-semibold">Excellence</h3>
               <p className="mt-2 text-sm text-muted-foreground">Delivering quality digital experiences end to end.</p>
             </div>
-            <div className="group rounded-2xl border border-border bg-card p-7 shadow-soft transition-all hover:-translate-y-1 hover:border-accent">
+            <div className="group rounded-2xl border border-border/20 bg-card p-7 shadow-soft transition-all hover:-translate-y-1 hover:border-accent">
               <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary transition group-hover:bg-accent
                group-hover:text-accent-foreground">
                 <LucideUsers width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}
@@ -89,7 +89,7 @@ export default function Page() {
               <h3 className="mt-5 font-display text-lg font-semibold">Collaboration</h3>
               <p className="mt-2 text-sm text-muted-foreground">Growing together with our clients and communities.</p>
             </div>
-            <div className="group rounded-2xl border border-border bg-card p-7 shadow-soft transition-all hover:-translate-y-1 hover:border-accent">
+            <div className="group rounded-2xl border border-border/20 bg-card p-7 shadow-soft transition-all hover:-translate-y-1 hover:border-accent">
               <div className="grid h-12 w-12 place-items-center rounded-xl bg-primary/10 text-primary transition group-hover:bg-accent
                group-hover:text-accent-foreground">
                 <HeartHandshake width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2}
