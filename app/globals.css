@@ -2,7 +2,8 @@
 
 @layer base{
     :root {
-        --color-background: #ffffff;
+        /* Core Colors */
+        --color-background: #fafbfc;
         --color-foreground: #0b132b; /*headings*/
 
         /* Call to action & Button*/
@@ -10,11 +11,14 @@
         --color-brand-yellow-hover: #facc15;
 
         /* Typography Accent colors*/
-        --color-brand-blue: #2563eb;
+        --color-brand-blue: #003d7a;
         --color-brand-gold: #eab308;
+        --color-navy-dark: #0f1935; /* Footer/CTA section background */
+        --color-navy-darker: #001a4d;
 
-        --color-border: #f1f5f9; /* Grid line */
-        --color-muted-text: #4b5563; /* text description */
+
+        --color-border: #e8ecf1; /* Grid line */
+        --color-muted-text: #6b7280; /* text description */
 
     }
 }
