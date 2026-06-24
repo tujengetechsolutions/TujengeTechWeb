@@ -169,4 +169,93 @@
             text-accent-foreground shadow-accent
   }
 }
+/* ─────────────────────────────────────────────
+   THEME TOKENS
+   ───────────────────────────────────────────── */
+@theme {
+  /* Colors */
+  --color-primary: #3b5bdb;           /* blue — matches the nav/heading blue */
+  --color-primary-foreground: #ffffff;
 
+  --color-accent: #f5c518;            /* yellow — matches the "Start a Project" button */
+  --color-accent-foreground: #1a1a1a;
+
+  --color-background: #ffffff;        /* white page background */
+  --color-foreground: #111827;        /* near-black body text */
+
+  --color-muted-foreground: #6b7280;  /* grey paragraph text */
+
+  --color-ring: #3b5bdb;
+
+  --color-border: #94a3b8;   /* slate-400 — a neutral grey */
+  --color-card: #ffffff;     /* card background */
+
+  /* Typography */
+  --font-display: "Cal Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Shadows */
+  --shadow-accent: 0 4px 24px 0 rgba(168, 85, 247, 0.35);
+  --shadow-glow:   0 8px 48px 0 rgba(99, 102, 241, 0.40);
+
+  /* Animations */
+  --animate-fade-in-up: fade-in-up 0.5s ease-out both;
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ─────────────────────────────────────────────
+   CUSTOM UTILITIES
+   ───────────────────────────────────────────── */
+
+/* Grid background pattern — used as overlay */
+@utility grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Indigo → purple gradient text */
+@utility text-gradient-accent {
+  background: linear-gradient(135deg, #4a67cc, #c4a96b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero section gradient background */
+@utility bg-gradient-hero {
+  background: linear-gradient(145deg, #1a237e 0%, #283593 50%, #1e88e5 100%);
+}
+
+/* ─────────────────────────────────────────────
+   GLOBAL BASE STYLES
+   ───────────────────────────────────────────── */
+@layer base {
+
+  body {
+    background-color: #ffffff;
+    color: #111827
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans, ui-sans-serif, system-ui, sans-serif);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
