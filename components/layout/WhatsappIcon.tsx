@@ -28,7 +28,7 @@ export default function WhatsappIcon() {
 
      )}
       <Link
-        href={`https://wa.me/254716922898?text=${message}`} target="_blank" 
+        href={`https://wa.me/254763032344?text=${message}`} target="_blank" 
         className="relative flex items-center justify-center text-white bg-green-500 rounded-full h-16 w-16 shadow-xl transition-transform hover:scale-110">
         <span className="absolute inset-0 rounded-full bg-green-500 opacity-60 animate-ping" />
         <MessageCircleIcon className="relative z-10" />
