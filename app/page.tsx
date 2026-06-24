@@ -1,10 +1,11 @@
 'use client';
-import Image from "next/image";
+
 import { HeroSection } from '@/components/animations/heroSection';
 import { ScrollReveal } from '@/components/animations/scrollReveal';
 import { TextAnimation } from '@/components/animations/textAnimation';
 import { ButtonAnimation } from '@/components/animations/buttonAnimation';
 import { PortfolioCard } from '@/components/animations/portfolioCard';
+import { ServiceCard } from '@/components/animations/serviceCard';
 
 export default function Home() {
   const projects = [
@@ -12,18 +13,42 @@ export default function Home() {
       id: 1,
       title: 'Yana',
       category: 'Digital Product',
-      description: 'A modern platform delivering seamless experience',
-      image: '/images/yana.jpg',
+      description: 'A modern platform delivering a seamless, intuitive experience for users — built for scale from day one.',
+      tech: ['Next.js', 'TypeScript', 'PostgreSQL'],
+      gradient: 'from-blue-600 to-blue-800',
     },
     {
       id: 2,
-      title: 'LegalEase',
-      category: 'Legal Tech',
-      description: 'Next-gen legal workflow tool',
-      image: '/images/legal.jpg',
+      title: 'LegalEase 2',
+      category: 'Legal Tech Platform',
+      description: 'A next-generation legal workflow tool that simplifies document handling, case tracking, and client collaboration.',
+      tech: ['React', 'FastAPI', 'PostgreSQL'],
+      gradient: 'from-yellow-400 to-teal-500',
     },
   ];
 
+  const services = [
+  {
+    id: 1,
+    title: 'Software Development',
+    description: 'Scalable web platforms and enterprise applications',
+    image: 'https://cdn.pixabay.com/photo/2024/05/21/19/57/computer-8779039_1280.jpg',
+    
+  },
+  {
+    id: 2,
+    title: 'Mobile Apps',
+    description: 'iOS and Android experiences built with React Native',
+    image: 'https://cdn.pixabay.com/photo/2015/12/11/09/30/mobile-phone-1087845_1280.jpg',
+    
+  },
+  {id: 3,
+    title: 'AI Solutions',
+    description: 'Intelligent automation and AI-powered features',
+    image: 'https://cdn.pixabay.com/photo/2024/12/24/19/13/technology-9289238_1280.jpg',
+    
+  },
+];
   return (
     <main>
       {/* Hero Section */}
@@ -48,6 +73,7 @@ export default function Home() {
         </section>
       </ScrollReveal>
 
+     
       {/* Services Section */}
       <ScrollReveal variant="slideInLeft">
         <section className="py-20 px-8 bg-gray-50">
@@ -56,18 +82,16 @@ export default function Home() {
               <TextAnimation text="Our Services" />
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-bold mb-4">Software Development</h3>
-                <p className="text-gray-600">Scalable web platforms and enterprise applications</p>
-              </div>
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-bold mb-4">Mobile Apps</h3>
-                <p className="text-gray-600">iOS and Android experiences built with React Native</p>
-              </div>
-              <div className="bg-white p-8 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-bold mb-4">AI Solutions</h3>
-                <p className="text-gray-600">Intelligent automation and AI-powered features</p>
-              </div>
+              {services.map((service, index) => (
+                <ScrollReveal key={service.id} variant="slideUp" delay={index * 0.2}>
+                  <ServiceCard
+                    title={service.title}
+                    description={service.description}
+                    image={service.image}
+                    
+                  />
+                </ScrollReveal>
+              ))}
             </div>
           </div>
         </section>
@@ -87,7 +111,8 @@ export default function Home() {
                     title={project.title}
                     description={project.description}
                     category={project.category}
-                    image={project.image}
+                    tech={project.tech}
+                    gradient={project.gradient}
                     onViewClick={() => console.log(`Viewing ${project.title}`)}
                   />
                 </ScrollReveal>
