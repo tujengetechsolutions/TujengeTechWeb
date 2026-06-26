@@ -1,6 +1,5 @@
-
-import Image from "next/image";
 'use client';
+import Image from "next/image";
 
 import { HeroSection } from '@/components/animations/heroSection';
 import { ScrollReveal } from '@/components/animations/scrollReveal';
@@ -151,6 +150,8 @@ export default function Home() {
         </div>
       </section>
       </ScrollReveal>
+      
     </main>
+    
   );
 }
