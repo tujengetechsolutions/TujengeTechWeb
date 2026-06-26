@@ -1,6 +1,5 @@
-
-import Image from "next/image";
 'use client';
+import Image from "next/image";
 
 import { HeroSection } from '@/components/animations/heroSection';
 import { ScrollReveal } from '@/components/animations/scrollReveal';
@@ -52,10 +51,8 @@ export default function Home() {
   },
 ];
   return (
-    <>
-     <h1 className="flex justify-center items-center min-h-screen bg-background">Hello Team</h1>
-    </>
-    <main>
+
+   <main>
       {/* Hero Section */}
       <HeroSection
         imageSrc="/images/hero-team.jpg"
@@ -144,6 +141,8 @@ export default function Home() {
           </div>
         </section>
       </ScrollReveal>
+      
     </main>
+    
   );
 }
