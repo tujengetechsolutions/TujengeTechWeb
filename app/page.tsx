@@ -8,6 +8,7 @@ import { TextAnimation } from '@/components/animations/textAnimation';
 import { ButtonAnimation } from '@/components/animations/buttonAnimation';
 import { PortfolioCard } from '@/components/animations/portfolioCard';
 import { ServiceCard } from '@/components/animations/serviceCard';
+import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
   const projects = [
@@ -52,9 +53,8 @@ export default function Home() {
   },
 ];
   return (
-    <>
-     <h1 className="flex justify-center items-center min-h-screen bg-background">Hello Team</h1>
-    </>
+  
+    
     <main>
       {/* Hero Section */}
       <HeroSection
@@ -129,20 +129,27 @@ export default function Home() {
 
       {/* Contact Section */}
       <ScrollReveal variant="slideUp">
-        <section className="py-20 px-8 bg-blue-600 text-white">
-          <div className="max-w-7xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-6">
-              <TextAnimation text="Let's build something great" />
+        <section className="px-5 py-20 md:px-8 md:py-28">
+        <div className="bg-gradient-hero shadow-glow relative mx-auto max-w-6xl overflow-hidden rounded-3xl px-8 py-16 text-center text-white 
+        md:px-16 md:py-24">
+          <div className="absolute inset-0 grid-bg opacity-25"></div>
+          <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-accent/30 blur-3xl"></div>
+          <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-primary/40 blur-3xl"></div>
+          <div className="relative">
+            <h2 className="font-display text-4xl font-bold md:text-6xl">Ready to Build <span className="text-gradient-accent">the Future?</span>
             </h2>
-            <p className="text-lg mb-8">Tell us about your project</p>
-            <ButtonAnimation 
-              variant="primary"
-              onClick={() => console.log('start project')}
-            >
-              Start a Project
-            </ButtonAnimation>
+            <p className="mx-auto mt-5 max-w-2xl text-base text-white/80 md:text-lg">Partner with TujengeTech and transform your ideas into powerful digital solutions that scale.</p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <a href="/contact" className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm cursor-pointer focus-visible:outline-none focus-visible:ring-1
+               focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 
+               bg-accent text-accent-foreground shadow-accent hover:brightness-105 hover:-translate-y-0.5 transition-all duration-300 font-semibold h-10 rounded-md px-8">Let's Work Together <ArrowRight/></a>
+              <a href="/projects" className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-1
+               focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border shadow-sm h-10 rounded-md px-8 border/white/30 gb/white/5
+                text/white hover:gb-white/10 rounded-md px-8 border-white/30 bg-white/5 text/white hover:bg-white/10 hover:text-white">Explore Our Work</a>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
       </ScrollReveal>
     </main>
   );
