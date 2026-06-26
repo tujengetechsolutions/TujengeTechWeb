@@ -1,5 +1,27 @@
 @import "tailwindcss";
 
+@layer base{
+    :root {
+        /* Core Colors */
+        --color-background: #fafbfc;
+        --color-foreground: #0b132b; /*headings*/
+
+        /* Call to action & Button*/
+        --color-brand-yellow: #eab308;
+        --color-brand-yellow-hover: #facc15;
+
+        /* Typography Accent colors*/
+        --color-brand-blue: #003d7a;
+        --color-brand-gold: #eab308;
+        --color-navy-dark: #0f1935; /* Footer/CTA section background */
+        --color-navy-darker: #001a4d;
+
+
+        --color-border: #e8ecf1; /* Grid line */
+        --color-muted-text: #6b7280; /* text description */
+
+    }
+}
 @theme {
   --font-display: "Space Grotesk", system-ui, sans-serif;
   --color-background: #FFFFFF;
