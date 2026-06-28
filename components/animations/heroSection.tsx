@@ -15,16 +15,6 @@ export const HeroSection = ({
   onExploreWork,
 }: HeroSectionProps) => {
   const imageContainerRef = useRef<HTMLDivElement>(null);
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -61,6 +51,7 @@ export const HeroSection = ({
 
   return (
     <section className="relative w-full min-h-screen overflow-hidden bg-linear-to-br from-white via-blue-50 to-yellow-50 pt-20 pb-20">
+      {/* Animated Background Blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{
@@ -88,30 +79,30 @@ export const HeroSection = ({
         />
       </div>
 
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-6 md:px-8 py-20 max-w-7xl mx-auto">
+      {/* Main Grid Layout */}
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start px-6 md:px-8 py-20 max-w-7xl mx-auto">
+        
+        {/* Left Column: Text Content */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="space-y-8"
+          className="space-y-8 pt-10"
         >
-          <motion.div variants={itemVariants}>
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-100 rounded-full border border-yellow-300">
-              <span className="text-yellow-600 text-sm font-semibold">
-                ✨ INNOVATING WITH PURPOSE
-              </span>
-            </div>
-          </motion.div>
+          {/* Badge */}
+         
 
+          {/* Headline with Gradient */}
           <motion.h1 
             variants={itemVariants} 
             className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
           >
             Building
-            <span className="text-blue-600"> Tomorrow</span>
+            <span className="text-gradient-accent"> Tomorrow</span>
             <span className="text-gray-400"> Today.</span>
           </motion.h1>
 
+          {/* Subtitle */}
           <motion.p
             variants={itemVariants}
             className="text-lg md:text-xl text-gray-600 max-w-lg leading-relaxed"
@@ -119,6 +110,7 @@ export const HeroSection = ({
             We create innovative digital solutions that help businesses grow, scale, and transform through technology.
           </motion.p>
 
+          {/* CTA Buttons */}
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 pt-4">
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -140,54 +132,64 @@ export const HeroSection = ({
           </motion.div>
         </motion.div>
 
+        {/* Right Column: Sticky Image */}
         <motion.div
           variants={imageVariants}
           initial="hidden"
           animate="visible"
           className="relative"
         >
+          {/* Sticky Container */}
           <motion.div
             ref={imageContainerRef}
-            style={{
-              y: scrollY * 0.5,
-            }}
-            className="relative w-full aspect-square rounded-3xl overflow-hidden shadow-2xl"
+            className="sticky top-20 h-fit"
           >
-            <img
-              src={imageSrc}
-              alt="Team working on projects"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-            className="absolute top-8 right-8 bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg backdrop-blur-md border border-blue-400"
-          >
-            <div className="flex items-center gap-2">
-              <motion.div
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="w-3 h-3 bg-blue-300 rounded-full"
+            {/* Image */}
+            <motion.div
+              className="relative w-full rounded-3xl overflow-hidden shadow-2xl"
+              style={{
+                aspectRatio: '1/1',
+              }}
+            >
+              <img
+                src={imageSrc}
+                alt="Team working on projects"
+                className="w-full h-full object-cover"
               />
-              <span className="font-semibold">AI Engine</span>
-            </div>
-            <div className="text-sm text-blue-100">99.2% accuracy</div>
-          </motion.div>
+            </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1, duration: 0.6 }}
-            className="absolute bottom-8 right-8 bg-yellow-400 text-black px-6 py-3 rounded-full shadow-lg font-semibold"
-          >
-            🚀 Deploy Ready
+            {/* AI Engine Badge */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className="absolute top-8 right-8 bg-blue-600 text-white px-6 py-3 rounded-full shadow-lg backdrop-blur-md border border-blue-400"
+            >
+              <div className="flex items-center gap-2">
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="w-3 h-3 bg-blue-300 rounded-full"
+                />
+                <span className="font-semibold">AI Engine</span>
+              </div>
+              <div className="text-sm text-blue-100">99.2% accuracy</div>
+            </motion.div>
+
+            {/* Deploy Ready Badge */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1, duration: 0.6 }}
+              className="absolute bottom-8 right-8 bg-yellow-400 text-black px-6 py-3 rounded-full shadow-lg font-semibold"
+            >
+              🚀 Deploy Ready
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
 
+      {/* Scroll Indicator */}
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
