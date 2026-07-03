@@ -16,14 +16,57 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.WEBSITE_URL as string),
+
   title: {
-    default:'TujengeTech | Building Tomorrow Today',
-    template: '%s | TujenegeTech'
+    default: "Tujenge Tech Solutions",
+    template: "%s | Tujenge Tech Solutions",
   },
-  description: "Tujenege tech solutions",
+  description:
+    "Tujenge Tech Solutions is a technology company dedicated to creating innovative, tech-driven solutions for building a better tomorrow, today.",
+
+  keywords: [
+    "technology solutions",
+    "software development",
+    "tech company",
+    "innovation",
+  ],
+
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "Tujenge Tech Solutions",
+    title: "Tujenge Tech Solutions",
+    description:
+      "Tujenge Tech Solutions is a technology company dedicated to creating innovative, tech-driven solutions for building a better tomorrow, today.",
+    // images: [
+    //   {
+    //     url: "/og-image.jpg", // Place this image in your public folder
+    //     width: 1200,
+    //     height: 630,
+    //     alt: "Tujenge Tech Solutions Hero Image",
+    //   },
+    // ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Tujenge Tech Solutions",
+    description:
+      "Tujenge Tech Solutions is a technology company dedicated to creating innovative, tech-driven solutions for building a better tomorrow, today.",
+    // images: ["/og-image.jpg"],
+  },
+
+  alternates: {
+    canonical: "/",
+  },
 };
 
-export default function RootLayout({children,}:{children: React.ReactNode;}) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
