@@ -106,7 +106,7 @@ const SOCIALS = [
 ];
 const CONTACT_INFO = [
     {icon: Mail, label: "Email",value: "tujengetechsolutions@gmail.com" },
-    {icon: Phone,label: "Phone",value: "+254 763 032 344"},
+    {icon: Phone,label: "Phone",value: "+254 758 080 448"},
     {icon: MapPin,label: "Location", value: "Nairobi · Remote Worldwide"},
 ];
     return(

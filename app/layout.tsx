@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.WEBSITE_URL as string),
+  metadataBase: new URL(process.env.WEBSITE_URL ?? 'https://tujengetech.gklelei.online'),
 
   title: {
     default: "Tujenge Tech Solutions",
